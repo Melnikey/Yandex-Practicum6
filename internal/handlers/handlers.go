@@ -11,7 +11,7 @@ import (
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-    data, err := os.ReadFile("C:/Users/KOT/Dev/Yandex-Practicum6/index.html") // TO DO перевести на относительный путь
+    data, err := os.ReadFile("index.html") // TO DO перевести на относительный путь
     if err != nil {
         http.Error(w, "Failed to load index.html", http.StatusInternalServerError)
         return
