@@ -49,7 +49,7 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    fmt.Fprintf(w, convertedString)
+    fmt.Fprintf(w, "%s", convertedString)
 }
 
 func main() {
