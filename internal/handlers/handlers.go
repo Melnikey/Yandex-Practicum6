@@ -11,7 +11,7 @@ import (
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-    data, err := os.ReadFile("index.html")
+    data, err := os.ReadFile("C:/Users/KOT/Dev/Yandex-Practicum6/index.html") // TO DO перевести на относительный путь
     if err != nil {
         http.Error(w, "Failed to load index.html", http.StatusInternalServerError)
         return
@@ -23,7 +23,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
     r.ParseMultipartForm(0)
-    file, handler, err := r.FormFile("file.txt")
+    file, handler, err := r.FormFile("myFile")
     if err != nil {
         http.Error(w, fmt.Sprintf("Ошибка парсинга: %v", err), http.StatusInternalServerError)
         return
