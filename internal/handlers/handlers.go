@@ -42,7 +42,7 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    fileName := time.Now().UTC().String() + filepath.Ext(handler.Filename)
+    fileName := time.Now().Format("2006-01-02 15-04-05") + filepath.Ext(handler.Filename)
     err = os.WriteFile(fileName, []byte(convertedString), 0644)
     if err != nil {
         http.Error(w, fmt.Sprintf("Ошибка записи файла: %v", err), http.StatusInternalServerError)
