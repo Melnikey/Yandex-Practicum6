@@ -23,7 +23,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
     r.ParseMultipartForm(0)
-    file, handler, err := r.FormFile("file")
+    file, handler, err := r.FormFile("file.txt")
     if err != nil {
         http.Error(w, fmt.Sprintf("Ошибка парсинга: %v", err), http.StatusInternalServerError)
         return
